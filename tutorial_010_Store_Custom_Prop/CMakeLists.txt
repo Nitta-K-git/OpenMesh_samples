@@ -13,7 +13,12 @@ include(../general.cmake) # https://stackoverflow.com/questions/22804287/cmake-f
 
 set(SOURCE_FILES
    main.cpp
-   smooth_algo.hh
+stats.hh
+main.cpp
+int2roman.hh
+int2roman.cc
+generate_cube.hh
+fill_props.hh
 )
 
 # Add Executable

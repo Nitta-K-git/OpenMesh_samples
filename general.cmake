@@ -31,11 +31,11 @@ find_package( OpenMesh REQUIRED )
 # endif()
 
 if(USE_QT_SYSTEM)
-   # set(Qt5_DIR $ENV{QTDIR})
-   set(Qt5_DIR C:/Qt2/5.12.3/msvc2017_64)
-   list(APPEND CMAKE_PREFIX_PATH ${Qt5_DIR})
-   find_package(Qt5 COMPONENTS Widgets REQUIRED)
+   message("---USE_QT_SYSTEM---")
+endif()
 
+if(USE_QT_SYSTEM)
+   # https://doc.qt.io/qt-5/cmake-manual.html
    # Set Automatic MOC
    set(CMAKE_AUTOMOC ON)
    set(CMAKE_AUTORCC ON)
@@ -43,6 +43,14 @@ if(USE_QT_SYSTEM)
    if(CMAKE_VERSION VERSION_LESS "3.7.0")
       set(CMAKE_INCLUDE_CURRENT_DIR ON)
    endif()
+
+   # set(Qt5_DIR $ENV{QTDIR})
+   set(Qt5_DIR C:/Qt2/5.12.3/msvc2017_64)
+   list(APPEND CMAKE_PREFIX_PATH ${Qt5_DIR})
+   find_package(Qt5 REQUIRED COMPONENTS 
+      Widgets 
+      Core
+   )
 endif()
 
 set(TARGET_LINK_LIBRARIES

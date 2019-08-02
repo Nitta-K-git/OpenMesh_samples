@@ -271,3 +271,5 @@ OMファイルという独自形式のデータフォーマットでメッシュ
 ## 002_Qt_viewer
 
 gitのOpenMesh\src\OpenMesh\Apps\QtViewerをベースに作成。
+
+MeshViewerWidgetT_impl.hhがmesh描画処理の実装

@@ -1,7 +1,7 @@
 cmake_minimum_required( VERSION 3.6 )
 
-# option(USE_QT_SYSTEM "Use Qt system" OFF) # https://www.wagavulin.jp/entry/2011/11/27/222650
-# set(USE_QT_SYSTEM OFF)
+option(USE_QT_SYSTEM "Use Qt system" OFF) # https://www.wagavulin.jp/entry/2011/11/27/222650
+set(USE_QT_SYSTEM ON)
 
 # Create Project
 get_filename_component(ProjectId ${CMAKE_CURRENT_SOURCE_DIR} NAME) # https://stackoverflow.com/questions/12344368/automatically-use-the-directory-as-the-project-name-in-cmake
@@ -12,8 +12,25 @@ message(${ProjectId})
 include(../general.cmake) # https://stackoverflow.com/questions/22804287/cmake-file-structure-how-to-split-a-cmakelists-txt-into-multiple-files
 
 set(SOURCE_FILES
-   main.cpp
+   # main.cpp
+   QGLViewerWidget.hh
+   meshviewer.cc
+   MeshViewerWidget.cc
+   MeshViewerWidget.hh
+   MeshViewerWidgetT.hh
+   MeshViewerWidgetT_impl.hh
+   QGLViewerWidget.cc
 )
+if(USE_QT_SYSTEM)
+   # QGLWidget Setting
+   find_package(Qt5 REQUIRED COMPONENTS OpenGL)
+   find_package(OpenGL REQUIRED)
+   set(TARGET_LINK_LIBRARIES
+      ${TARGET_LINK_LIBRARIES}
+      Qt5::OpenGL
+      ${OPENGL_LIBRARIES}
+      )
+endif()
 
 # Add Executable
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})

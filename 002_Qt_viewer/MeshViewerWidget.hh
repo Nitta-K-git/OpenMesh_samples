@@ -72,7 +72,7 @@ typedef OpenMesh::TriMesh_ArrayKernelT<MyTraits>  MyMesh;
 
 //== CLASS DEFINITION =========================================================
 
-class MeshViewerWidget : public MeshViewerWidgetT<MyMesh>
+class MeshViewerWidget : public MeshViewerWidgetT<MyMesh> // 型指定してクラス定義
 {
     Q_OBJECT
 

@@ -1,6 +1,23 @@
 # OpenMesh_samples
 OpenMesh basic usage
 
+# 概要
+
+公式サイト
+
+- [OpenMesh]([https://www.openmesh.org](https://www.openmesh.org/))
+- [OpenMesh / OpenMesh · GitLab](https://graphics.rwth-aachen.de:9000/OpenMesh/OpenMesh)
+
+参考サイト
+
+- [オープンソースの３Dメッシュデータライブラリ『OpenMesh』 | NegativeMindException](https://blog.negativemind.com/2015/11/18/openmesh/)
+- [OpenMeshの使い方 - Qiita](https://qiita.com/shohirose/items/d92447fcc07a623ebf24)
+- [OpenMesh | 研究開発日誌](http://www.cloud.teu.ac.jp/public/MDF/toudouhk/blog/2015/04/10/OpenMesh/)
+
+オープンソースの3Dメッシュデータ用ライブラリ。Python版もある。
+
+OpenFlipperというソフトはOpenMeshをベースに作成されている。
+
 # 環境構築
 
 ## インストーラーを使用する場合
